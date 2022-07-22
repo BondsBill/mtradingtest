@@ -10,5 +10,4 @@ Test task for MTrading
 
 ## Production:
 
-    npm install;
-    ng serve
+    ng build
