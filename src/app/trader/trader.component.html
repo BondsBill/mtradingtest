@@ -1,0 +1,13 @@
+<div
+  class="traderCard active"
+  [ngClass]="{'active': isActive}"
+>
+  <div class="traderCard-flag" style="background-image: url({{trader.flag}});">
+  </div>
+  <div class="traderCard-name">
+    {{orderNumber}}. {{trader.name}}
+  </div>
+  <div class="traderCard-profit">
+    + {{trader.monthly_profit}}%
+  </div>
+</div>

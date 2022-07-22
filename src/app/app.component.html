@@ -1,0 +1,47 @@
+  <!-- <div *ngFor="let trader of traders; let i = index;">
+    <div class="traderCard">
+      <app-trader
+        [trader]="trader"
+      >
+      </app-trader>
+    </div>
+  </div> -->
+
+  <h2>Copy the best masters</h2>
+  <div class="tradersList">
+    <div *ngFor="let trader of traders; let i = index;">
+        <app-trader
+          [trader]="trader"
+          [isActive]="i === activeTrader"
+          [orderNumber]="i+1"
+          (click)="changeActiveTrader(i)"
+        >
+        </app-trader>
+    </div>
+  </div>
+  <div class="traderInfo">
+    <div class="topPanel">
+      <div class="topPanel-item">
+        <span>Monthly profit</span>
+        <p>
+          <p>{{traders[activeTrader].monthly_profit}}%</p>
+      </div>
+      <div class="topPanel-item">
+        <span>Total profit</span>
+        <p>
+          <p>{{traders[activeTrader].total_profit}}%</p>
+      </div>
+      <div class="topPanel-item">
+        <span>Im namagement</span>
+        <p>{{traders[activeTrader].capital}} USD</p>
+      </div>
+      <div
+        class="copyButton"
+        (click)="showTraderInfo()"
+      >
+        Copy Now
+      </div>
+    </div>
+    <div #traderChart class="traderChart">
+    </div>
+  </div>
